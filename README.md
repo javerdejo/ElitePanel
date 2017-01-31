@@ -1,2 +1,2 @@
-# elitepanel
+# Elite Panel
 Elite Auxiliary Panel
