@@ -33,7 +33,6 @@ while True:
         time.sleep(1)
         if logUpdated:
             print "> Star (" + starSystem + ") --- Station (" + stationName +")"
-            print " "
             logUpdated = False
     else:
         data = json.loads(line)
