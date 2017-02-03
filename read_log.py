@@ -22,7 +22,7 @@ logUpdated = False
 
 signal.signal(signal.SIGINT, signal_handler)
 print "----------------------------------------------------------------------"
-print "Elite Dangerous Panel Event Monitor"
+print "Elite Dangerous Panel Event Monitor V0.1"
 print "Logfile name: " +  fin.name
 print "Press Ctrl+C to exit"
 print "----------------------------------------------------------------------"
