@@ -1,0 +1,296 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+
+      <style media="screen">
+
+      html {
+        height: 96%;
+      }
+
+      body {
+         background: #161011;
+         height: 96%;
+      }
+
+      .panel {
+         background: #161011;
+         height: 96%;
+         width: 96%;
+         margin: 20px 20px 20px 20px;
+         padding: 20px 10px 20px 10px;
+         display: block;
+         height: inherit;
+         justify-content: center;
+         border: solid 2px #c4521c;
+         border-radius: 1em;
+      }
+
+      .panel .header {
+         display: block;
+         text-align: center;
+      }
+
+      .panel .header #title {
+         margin: 2px 2px 2px 2px;
+         font: 40px Georgia;
+         line-height: 60px;
+         color: #c4521c;
+      }
+
+      .panel #subtitle {
+         margin: 2px 0px 25px 0px;
+         font-size: 20px;
+         height: auto;
+         color: #FFFFFF;
+      }
+
+      .panel .controls {
+         display: flex;
+         justify-content: center;
+      }
+
+      .panel .incoming {
+         margin: 20px 0px 50px 0px;
+         display: block;
+         justify-content: center;
+      }
+
+      .panel .incoming .message {
+         margin: 10px 0px 10px 0px;
+         display: flex;
+         justify-content: center;
+      }
+
+      .panel .thanks {
+         margin-top: 20px;
+         display: flex;
+         justify-content: center;
+         font: 15px Georgia;
+         color: #4d4d4c;
+      }
+
+      .button {
+         margin: 4px 4px 4px 4px;
+         padding: .5em 2em .55em;
+         text-align: center;
+         text-decoration: none;
+         zoom: 1;
+      	font: 20px Georgia;
+         width: 120px;
+         line-height: 60px;
+         background: #161011;
+         color: #F39E24;
+         border-radius: 1em;
+      	border: solid 2px #F39E24;
+      }
+
+      #starSystem {
+         display: flex;
+         color: #F39E24;
+         text-align: center;
+         font: 25px Georgia;
+      }
+
+      #stationName {
+         display: flex;
+         color: #F39E24;
+         text-align: center;
+         font: 25px Georgia;
+      }
+
+      #incomingMessage {
+         display: flex;
+         color: #c8c8c8;
+         text-align: center;
+         font: 25px Georgia;
+      }
+
+      </style>
+
+      <script type="text/javascript">
+
+         var lights_status = 0;
+         var landing_status = 0;
+         var target_status = 0;
+         var cargo_status = 0;
+         var galaxy_status = 0;
+         var system_status = 0;
+         var cpanel_status = 0;
+         var spanel_status = 0;
+
+         function WebSocketTest(control) {
+
+            switch (control) {
+               case control = 'I':
+                  if (lights_status == 0) {
+                     document.getElementById("lights").style.background = "#F39E24";
+                     document.getElementById("lights").style.color = "#000000";
+                     lights_status = 1;
+                  } else {
+                     document.getElementById("lights").style.background = "#000000";
+                     document.getElementById("lights").style.color = "#F39E24";
+                     lights_status = 0;
+                  }
+                  break;
+               case control = 'L':
+                  if (landing_status == 0) {
+                     document.getElementById("landing").style.background = "#F39E24";
+                     document.getElementById("landing").style.color = "#000000";
+                     landing_status = 1;
+                  } else {
+                     document.getElementById("landing").style.background = "#000000";
+                     document.getElementById("landing").style.color = "#F39E24";
+                     landing_status = 0;
+                  }
+                  break;
+               case control = 'T':
+                  if (target_status == 0) {
+                     document.getElementById("target").style.background = "#F39E24";
+                     document.getElementById("target").style.color = "#000000";
+                     target_status = 1;
+                  } else {
+                     document.getElementById("target").style.background = "#000000";
+                     document.getElementById("target").style.color = "#F39E24";
+                     target_status = 0;
+                  }
+                  break;
+               case control = 'C':
+                  if (cargo_status == 0) {
+                     document.getElementById("cargo").style.background = "#F39E24";
+                     document.getElementById("cargo").style.color = "#000000";
+                     cargo_status = 1;
+                  } else {
+                     document.getElementById("cargo").style.background = "#000000";
+                     document.getElementById("cargo").style.color = "#F39E24";
+                     cargo_status = 0;
+                  }
+                  break;
+               case control = 'G':
+                  if (galaxy_status == 0) {
+                     document.getElementById("galaxy").style.background = "#F39E24";
+                     document.getElementById("galaxy").style.color = "#000000";
+                     galaxy_status = 1;
+                  } else {
+                     document.getElementById("galaxy").style.background = "#000000";
+                     document.getElementById("galaxy").style.color = "#F39E24";
+                     galaxy_status = 0;
+                  }
+                  break;
+               case control = 'S':
+                  if (system_status == 0) {
+                     document.getElementById("system").style.background = "#F39E24";
+                     document.getElementById("system").style.color = "#000000";
+                     system_status = 1;
+                  } else {
+                     document.getElementById("system").style.background = "#000000";
+                     document.getElementById("system").style.color = "#F39E24";
+                     system_status = 0;
+                  }
+                  break;
+               case control = 'R':
+                  if (cpanel_status == 0) {
+                     document.getElementById("cpanel").style.background = "#F39E24";
+                     document.getElementById("cpanel").style.color = "#000000";
+                     cpanel_status = 1;
+                  } else {
+                     document.getElementById("cpanel").style.background = "#000000";
+                     document.getElementById("cpanel").style.color = "#F39E24";
+                     cpanel_status = 0;
+                  }
+                  break;
+               case control = 'Z':
+                  if (spanel_status == 0) {
+                     document.getElementById("spanel").style.background = "#F39E24";
+                     document.getElementById("spanel").style.color = "#000000";
+                     spanel_status = 1;
+                  } else {
+                     document.getElementById("spanel").style.background = "#000000";
+                     document.getElementById("spanel").style.color = "#F39E24";
+                     spanel_status = 0;
+                  }
+                  break;
+            }
+
+            // Send message to server
+            if ("WebSocket" in window) {
+
+               // Let us open a web socket
+               var ws = new WebSocket('ws://192.168.0.104:3056/ws');
+
+               ws.onopen = function() {
+                  // Web Socket is connected, send data using send()
+                  ws.send(control);
+                  console.log("Conectado");
+               };
+
+               ws.onmessage = function (evt) {
+                  //var received_msg = evt.data;
+                  var msg = JSON.parse(evt.data);
+
+                  document.getElementById("starSystem").innerHTML = msg.starSystem;
+                  document.getElementById("stationName").innerHTML = msg.stationName;
+                  document.getElementById("incomingMessage").innerHTML = msg.incomingMessage;
+               };
+
+               ws.onclose = function() {
+                  // websocket is closed.
+               };
+            } else {
+               // The browser doesn't support WebSocket
+               alert("WebSocket NOT supported by your Browser!");
+            }
+         }
+      </script>
+
+   </head>
+   <body onload="javascript:WebSocketTest('.')">
+
+      <div id="content" class="panel">
+
+         <div class="header">
+            <p id="title">Auxiliary Control Panel</p>
+            <p id="subtitle"></p>
+         </div>
+
+         <div class="incoming">
+            <div class="message" id="starSystem"></div>
+            <div class="message" id="stationName"></div>
+            <div class="message" id="incomingMessage"></div>
+         </div>
+
+         <div class="controls">
+            <a href="javascript:WebSocketTest('I')" id="lights" class="button">Lights</a>
+            <a href="javascript:WebSocketTest('L')" id="landing" class="button">Landing gear</a>
+            <a href="javascript:WebSocketTest('T')" id="target" class="button">Set target</a>
+            <a href="javascript:WebSocketTest('C')" id="cargo" class="button">Cargo scoop</a>
+         </div>
+         <div class="controls">
+            <a href="javascript:WebSocketTest('G')" id="galaxy" class="button">Galaxy map</a>
+            <a href="javascript:WebSocketTest('S')" id="system" class="button">System map</a>
+            <a href="javascript:WebSocketTest('R')" id="cpanel" class="button">Comm panel</a>
+            <a href="javascript:WebSocketTest('Z')" id="spanel" class="button">System panel</a>
+         </div>
+
+         <div class="thanks">
+            Elite Dangerous Horizons
+         </div>
+      </div>
+
+      <script type="text/javascript">
+         fullscreen = function(e){
+            if (e.webkitRequestFullScreen) {
+              e.webkitRequestFullScreen();
+           } else if(e.mozRequestFullScreen) {
+              e.mozRequestFullScreen();
+           }
+        }
+
+        document.getElementById('title').onclick = function(){
+          fullscreen(document.getElementById('content'));
+      }
+
+      </script>
+
+   </body>
+</html>
