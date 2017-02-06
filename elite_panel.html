@@ -15,15 +15,13 @@
 
       .panel {
          background: #161011;
-         height: 96%;
-         width: 96%;
-         margin: 20px 20px 20px 20px;
-         padding: 20px 10px 20px 10px;
+         height: 100%;
+         width: 100%;
+         margin: 0px 0px 20px 0px;
+         padding: 0px 0px 20px 0px;
          display: block;
          height: inherit;
          justify-content: center;
-         border: solid 2px #c4521c;
-         border-radius: 1em;
       }
 
       .panel .header {
@@ -32,28 +30,28 @@
       }
 
       .panel .header #title {
-         margin: 2px 2px 2px 2px;
-         font: 40px Georgia;
-         line-height: 60px;
-         color: #c4521c;
+         display: block;
+         margin: 20px 0px 2px 0px;
+         font-size: 20px;
+         height: auto;
+         width: 100%;
+         color: #161011;
+         background: #C4521C;
       }
 
       .panel #subtitle {
-         margin: 2px 0px 25px 0px;
+         display: block;
+         margin: 2px 0px 2px 0px;
          font-size: 20px;
          height: auto;
-         color: #FFFFFF;
+         width: 100%;
+         color: #161011;
+         background: #6495ED;
       }
 
       .panel .controls {
          display: flex;
-         justify-content: center;
-      }
-
-      .panel .incoming {
-         margin: 20px 0px 50px 0px;
-         display: block;
-         justify-content: center;
+         justify-content: left;
       }
 
       .panel .incoming .message {
@@ -62,48 +60,97 @@
          justify-content: center;
       }
 
-      .panel .thanks {
-         margin-top: 20px;
-         display: flex;
-         justify-content: center;
-         font: 15px Georgia;
-         color: #4d4d4c;
-      }
-
       .button {
          margin: 4px 4px 4px 4px;
-         padding: .5em 2em .55em;
+         padding: 2px 2px 2px 2px;
          text-align: center;
          text-decoration: none;
-         zoom: 1;
-      	font: 20px Georgia;
-         width: 120px;
-         line-height: 60px;
+      	font: 18px Georgia;
+         width: 145px;
+         line-height: 40px;
          background: #161011;
          color: #F39E24;
-         border-radius: 1em;
       	border: solid 2px #F39E24;
       }
 
+      .incoming {
+         display: inline-block;;
+         width: 850px;
+      }
+
       #starSystem {
-         display: flex;
-         color: #F39E24;
-         text-align: center;
-         font: 25px Georgia;
+         display: block;
+         float: left;
+         margin: 4px 4px 0px 0px;
+         padding-left: 5px;
+         border: 1px solid #F39E24;
+         text-align: left;
+         width: 300px;
+         font-size: 18px;
+         color: #c8c8c8;
+      }
+
+      #starSystemHeader {
+         display: block;
+         float: left;
+         margin: 4px 4px 0px 0px;
+         padding-left: 5px;
+         border: 1px solid #F39E24;
+         text-align: left;
+         width: 300px;
+         font-size: 18px;
+         color: #161011;
+         background: #F39E24;
       }
 
       #stationName {
-         display: flex;
-         color: #F39E24;
-         text-align: center;
-         font: 25px Georgia;
+         display: block;
+         float: left;
+         margin: 4px 0px 0px 0px;
+         padding-left: 5px;
+         border: 1px solid #F39E24;
+         text-align: left;
+         width: 500px;
+         font-size: 18px;
+         color: #c8c8c8;
+      }
+
+      #stationNameHeader {
+         display: block;
+         float: left;
+         margin: 4px 0px 0px 0px;
+         padding-left: 5px;
+         border: 1px solid #F39E24;
+         text-align: left;
+         width: 500px;
+         font-size: 18px;
+         color: #161011;
+         background: #F39E24;
       }
 
       #incomingMessage {
-         display: flex;
-         color: #c8c8c8;
-         text-align: center;
-         font: 25px Georgia;
+         display: block;
+         float: left;
+         margin: 4px 0px 0px 0px;
+         padding-left: 5px;
+         border: 1px solid #F39E24;
+         text-align: left;
+         width: 811px;
+         color: #6495ED;
+         font-size: 18px;
+      }
+
+      #incomingMessageHeader {
+         display: block;
+         float: left;
+         margin: 4px 0px 0px 0px;
+         padding-left: 5px;
+         border: 1px solid #F39E24;
+         text-align: left;
+         width: 811px;
+         font-size: 18px;
+         color: #161011;
+         background: #F39E24;
       }
 
       </style>
@@ -249,14 +296,23 @@
       <div id="content" class="panel">
 
          <div class="header">
-            <p id="title">Auxiliary Control Panel</p>
-            <p id="subtitle"></p>
+            <p id="title">Information Panel</p>
          </div>
 
          <div class="incoming">
-            <div class="message" id="starSystem"></div>
-            <div class="message" id="stationName"></div>
-            <div class="message" id="incomingMessage"></div>
+            <div class="message" id="starSystemHeader">System</div>
+            <div class="message" id="stationNameHeader">Station Name</div>
+            <div class="message" id="starSystem">starSystem</div>
+            <div class="message" id="stationName">stationName</div>
+         </div>
+
+         <div class="incoming">
+            <div class="message" id="incomingMessageHeader">Incoming Message</div>
+            <div class="message" id="incomingMessage">incomingMessage</div>
+         </div>
+
+         <div class="header">
+            <p id="title">Control Panel</p>
          </div>
 
          <div class="controls">
@@ -264,17 +320,12 @@
             <a href="javascript:WebSocketTest('L')" id="landing" class="button">Landing gear</a>
             <a href="javascript:WebSocketTest('T')" id="target" class="button">Set target</a>
             <a href="javascript:WebSocketTest('C')" id="cargo" class="button">Cargo scoop</a>
-         </div>
-         <div class="controls">
             <a href="javascript:WebSocketTest('G')" id="galaxy" class="button">Galaxy map</a>
             <a href="javascript:WebSocketTest('S')" id="system" class="button">System map</a>
             <a href="javascript:WebSocketTest('R')" id="cpanel" class="button">Comm panel</a>
             <a href="javascript:WebSocketTest('Z')" id="spanel" class="button">System panel</a>
          </div>
 
-         <div class="thanks">
-            Elite Dangerous Horizons
-         </div>
       </div>
 
       <script type="text/javascript">
