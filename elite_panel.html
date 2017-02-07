@@ -54,12 +54,6 @@
          justify-content: left;
       }
 
-      .panel .incoming .message {
-         margin: 10px 0px 10px 0px;
-         display: flex;
-         justify-content: center;
-      }
-
       .button {
          margin: 4px 4px 4px 4px;
          padding: 2px 2px 2px 2px;
@@ -74,83 +68,53 @@
       }
 
       .incoming {
-         display: inline-block;;
+         display: inline-block;
          width: 850px;
       }
 
-      #starSystem {
+      .eventLog {
          display: block;
          float: left;
+         height: 22px;
          margin: 4px 4px 0px 0px;
+         justify-content: center;
          padding-left: 5px;
          border: 1px solid #F39E24;
          text-align: left;
-         width: 300px;
          font-size: 18px;
-         color: #c8c8c8;
       }
 
       #starSystemHeader {
-         display: block;
-         float: left;
-         margin: 4px 4px 0px 0px;
-         padding-left: 5px;
-         border: 1px solid #F39E24;
-         text-align: left;
          width: 300px;
-         font-size: 18px;
          color: #161011;
          background: #F39E24;
       }
 
-      #stationName {
-         display: block;
-         float: left;
-         margin: 4px 0px 0px 0px;
-         padding-left: 5px;
-         border: 1px solid #F39E24;
-         text-align: left;
-         width: 500px;
-         font-size: 18px;
-         color: #c8c8c8;
+      #starSystemContent {
+         width: 300px;
+         color: #C8C8C8;
       }
 
       #stationNameHeader {
-         display: block;
-         float: left;
-         margin: 4px 0px 0px 0px;
-         padding-left: 5px;
-         border: 1px solid #F39E24;
-         text-align: left;
          width: 500px;
-         font-size: 18px;
          color: #161011;
          background: #F39E24;
       }
 
-      #incomingMessage {
-         display: block;
-         float: left;
-         margin: 4px 0px 0px 0px;
-         padding-left: 5px;
-         border: 1px solid #F39E24;
-         text-align: left;
-         width: 811px;
-         color: #6495ED;
-         font-size: 18px;
+      #stationNameContent {
+         width: 500px;
+         color: #c8c8c8;
       }
 
       #incomingMessageHeader {
-         display: block;
-         float: left;
-         margin: 4px 0px 0px 0px;
-         padding-left: 5px;
-         border: 1px solid #F39E24;
-         text-align: left;
          width: 811px;
-         font-size: 18px;
          color: #161011;
          background: #F39E24;
+      }
+
+      #incomingMessageContent {
+         width: 811px;
+         color: #6495ED;
       }
 
       </style>
@@ -275,9 +239,9 @@
                   //var received_msg = evt.data;
                   var msg = JSON.parse(evt.data);
 
-                  document.getElementById("starSystem").innerHTML = msg.starSystem;
-                  document.getElementById("stationName").innerHTML = msg.stationName;
-                  document.getElementById("incomingMessage").innerHTML = msg.incomingMessage;
+                  document.getElementById("starSystemContent").innerHTML = msg.starSystem;
+                  document.getElementById("stationNameContent").innerHTML = msg.stationName;
+                  document.getElementById("incomingMessageContent").innerHTML = msg.incomingMessage;
                };
 
                ws.onclose = function() {
@@ -300,15 +264,16 @@
          </div>
 
          <div class="incoming">
-            <div class="message" id="starSystemHeader">System</div>
-            <div class="message" id="stationNameHeader">Station Name</div>
-            <div class="message" id="starSystem">starSystem</div>
-            <div class="message" id="stationName">stationName</div>
+            <div class="eventLog" id="starSystemHeader">System</div>
+            <div class="eventLog" id="stationNameHeader">Station Name</div>
+
+            <div class="eventLog" id="starSystemContent"></div>
+            <div class="eventLog" id="stationNameContent"></div>
          </div>
 
          <div class="incoming">
-            <div class="message" id="incomingMessageHeader">Incoming Message</div>
-            <div class="message" id="incomingMessage">incomingMessage</div>
+            <div class="eventLog" id="incomingMessageHeader">Incoming Message</div>
+            <div class="eventLog" id="incomingMessageContent"></div>
          </div>
 
          <div class="header">
