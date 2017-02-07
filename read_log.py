@@ -7,7 +7,7 @@ import json
 import sys
 import os
 
-#path = "C:\Users\javie\Saved Games\Frontier Developments\Elite Dangerous\"
+#path = "C:\Users\javie\Saved Games\Frontier Developments\Elite Dangerous\\"
 path = "/Users/javerdejo/Desktop/Elite/"
 
 port = 3056
