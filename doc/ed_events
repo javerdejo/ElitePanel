@@ -1,0 +1,24 @@
++-----------------------------+------------------------------------------------
+|             Event           |
++-----------------------------+------------------------------------------------
+| Fileheader                  |
+| LoadGame                    |
+| Rank                        |
+| Progress                    |
+| ApproachSettlement          |
+| Location                    |
+| Docked                      |
+| Undocked                    |
+| ReceiveText                 |
+| SupercruiseEntry            |
+| FSDJump                     |
+| FuelScoop                   |
+| ReceiveText                 |
+| SupercruiseExit             |
+| DockingRequested            |
+| DockingGranted              |
+| RefuelAll                   |
+| EngineerProgress            |
+| EngineerCraft               |
+| EngineerApply               |
++-----------------------------+------------------------------------------------
