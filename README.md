@@ -1,2 +1,2 @@
-# Elite Auxiliary Panel
-Elite Auxiliary Panel
+# Elite Support Panel
+Elite Support Panel
