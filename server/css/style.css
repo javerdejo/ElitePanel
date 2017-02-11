@@ -1,0 +1,238 @@
+
+/* %%%%%% HTNL SECTIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+body {
+   background: #000000;
+   margin: 0px 0px 0px 0px;
+   width: 1278px;  /* for resolution equal to 1280 x 800 */
+   height: 798px;
+}
+
+
+/* %%%%%% PAGE SECTIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Main container */
+.elite {
+   display: inline-block;
+   width: inherit;  /* for resolution equal to 1280 x 800 */
+   height: inherit;
+   background: #000000;
+}
+
+/* Header container */
+.header {
+   display: inline-block;
+   width: inherit;
+   height: auto;   /* real size = 60 */
+   background: #1E1E1E;
+}
+
+/* All elite blocks container */
+.content {
+   display: inline-block;
+   width: inherit;
+   height: 738px;   /* real size = 740 */
+}
+
+/* %%%%%% BLOCKS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+.information {
+   margin: 5px 0px 0px 0px;
+   float: left;
+   width: 1274px;
+   height: auto;
+}
+
+.system {
+   margin: 5px 0px 0px 0px;
+   float: left;
+   width: 636px;
+   height: auto;
+}
+
+.fsdjump {
+   margin: 5px 0px 0px 0px;
+   float: left;
+   width: 636px;
+   height: auto;
+}
+
+.controls {
+   margin: 5px 0px 0px 0px;
+   float: left;
+   width: 636px;
+   height: auto;
+}
+
+
+/* %%%%%% BASIC ELEMENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+.header p {
+   display: inline-block;
+   margin: 20px 0px 20px 10px;
+   background: #1E1E1E;
+   color: #FF3B00;
+   font: 35px "Verdana";
+   vertical-align: middle;
+}
+
+.header img {
+   display: inline-block;
+   margin: 20px 0px 20px 10px;
+   vertical-align: middle;
+   width: 40px;
+   height: 40px;
+}
+
+.header input[type=text] {
+   margin: 1px 0px 0px 700px;
+   vertical-align: middle;
+   line-height: 24px;
+   width: 160px;
+   background: #170C00;
+   border: 1px solid #C06400;
+   color: #C06400;
+   font: 18px "Verdana";
+}
+
+.header input[type=button] {
+   vertical-align: middle;
+   font: 18px "Verdana";
+   background: #1E1E1E;
+   color: #C06400;
+   border: solid 1px #C06400;
+}
+
+.header input[type=button]:hover {
+   border: solid 1px #1FB0FF;
+   color: #1FB0FF;
+}
+
+.blocktitle {
+   display: block;
+   margin: 20px 0px 5px 0px;
+   font: 20px "Verdana";
+   font-weight:lighter;
+   color: #FF8C0D;
+}
+
+.item {
+   display: inline-block;
+}
+
+.labelfield {
+   font: 18px "Verdana";
+   padding-left: 5px;
+   background: #C06400;
+   color: #161011;
+   border: solid 1px #C06400;
+}
+
+.contentfield {
+   font: 18px "Verdana";
+   padding-left: 5px;
+   margin-bottom: 2px;
+   height: 22px;
+   background: #170C00;
+   color: #BABABA;
+   border: solid 1px #C06400;
+}
+
+.button {
+   display: inline-block;
+   margin: 4px 4px 6px 4px;
+   padding: 2px 2px 2px 2px;
+   text-align: center;
+   text-transform: uppercase;
+   font: 18px "Courier New";
+   width: 142px;
+   line-height: 50px;
+   background: #1E1E1E;
+   color: #C06400;
+   border: solid 1px #C06400;
+}
+
+/* %%%%%% ITEMS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+.systemName {
+   width: 450px;
+}
+
+.stationName {
+   width: 400px;
+}
+
+.stationType {
+   width: 390px;
+}
+
+.message {
+   width: 861px;
+}
+
+.event {
+   width: 390px;
+}
+
+.government {
+   float: left;
+   width: 300px;
+}
+
+.allegiance {
+   margin-top: -4px;
+   float: left;
+   width: 300px;
+}
+
+.security {
+   margin-top: -4px;
+   float: left;
+   width: 300px;
+}
+
+.economy {
+   margin-top: -4px;
+   float: left;
+   width: 300px;
+}
+
+.power {
+   margin-top: -4px;
+   float: left;
+   width: 300px;
+}
+
+.population {
+   margin-top: -4px;
+   float: left;
+   width: 300px;
+}
+
+.faction {
+   margin-top: -4px;
+   float: left;
+   width: 300px;
+}
+
+.bodyName {
+   margin-top: -4px;
+   float: left;
+   width: 300px;
+}
+
+.bodyType {
+   margin-top: -4px;
+   float: left;
+   width: 300px;
+}
+
+.jumpDistance {
+   width: 205px;
+}
+
+.fuelUsed {
+   width: 200px;
+}
+
+.fuelLevel {
+   width: 200px;
+}
