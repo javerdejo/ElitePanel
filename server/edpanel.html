@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Elite Dangerous Support Panel</title>
+      <link rel="stylesheet" href="css/style.css" type="text/css" >
+   </head>
+   <body>
+
+      <div class="elite" id="elitepanel">
+
+         <div class="header">
+            <img src="css/logo.png">
+            <p>Support Panel</p>
+            <input type="text" id="ipaddress" value="192.168.0.104">
+            <input type="button" id="connect" value="Connect">
+         </div>
+
+         <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+         <div class="content">
+
+            <!-- Information -->
+            <div class="information">
+
+               <div class="blocktitle">General Information</div>
+
+               <div class="item">
+                  <div class="labelfield systemName">System</div>
+                  <div class="contentfield systemName"></div>
+               </div>
+
+               <div class="item">
+                  <div class="labelfield stationName">Station Name</div>
+                  <div class="contentfield stationName"></div>
+               </div>
+
+               <div class="item">
+                  <div class="labelfield stationType">Station Type</div>
+                  <div class="contentfield stationType"></div>
+               </div>
+
+               <div class="item">
+                  <div class="labelfield message">Incoming Message</div>
+                  <div class="contentfield message"></div>
+               </div>
+
+               <div class="item">
+                  <div class="labelfield event">Event</div>
+                  <div class="contentfield event"></div>
+               </div>
+
+            </div>
+
+            <!-- System -->
+            <div class="system">
+
+               <div class="blocktitle">System</div>
+
+               <div class="item">
+                  <div class="labelfield government">Government</div>
+                  <div class="contentfield government"></div>
+               </div>
+
+               <div class="item">
+                  <div class="labelfield allegiance">Allegiance</div>
+                  <div class="contentfield allegiance"></div>
+               </div>
+
+               <div class="item">
+                  <div class="labelfield security">Security</div>
+                  <div class="contentfield security"></div>
+               </div>
+
+               <div class="item">
+                  <div class="labelfield economy">Economy</div>
+                  <div class="contentfield economy"></div>
+               </div>
+
+               <div class="item">
+                  <div class="labelfield power">Power</div>
+                  <div class="contentfield power"></div>
+               </div>
+
+               <div class="item">
+                  <div class="labelfield population">Population</div>
+                  <div class="contentfield population"></div>
+               </div>
+
+               <div class="item">
+                  <div class="labelfield faction">Faction</div>
+                  <div class="contentfield faction"></div>
+               </div>
+
+               <div class="item">
+                  <div class="labelfield bodyName">Body Name</div>
+                  <div class="contentfield bodyName"></div>
+               </div>
+
+               <div class="item">
+                  <div class="labelfield bodyType">Body Type</div>
+                  <div class="contentfield bodyType"></div>
+               </div>
+
+            </div>
+
+            <!-- FSD Jump -->
+            <div class="fsdjump">
+
+               <div class="blocktitle">FSD Jump</div>
+
+               <div class="item">
+                  <div class="labelfield jumpDistance">Jump Distance</div>
+                  <div class="contentfield jumpDistance"></div>
+               </div>
+
+               <div class="item">
+                  <div class="labelfield fuelUsed">Fuel Used</div>
+                  <div class="contentfield fuelUsed"></div>
+               </div>
+
+               <div class="item">
+                  <div class="labelfield fuelLevel">Fuel Level</div>
+                  <div class="contentfield fuelLevel"></div>
+               </div>
+
+            </div>
+
+            <!-- Controls -->
+            <div class="controls">
+
+               <div class="blocktitle">Controls</div>
+
+               <div class="item">
+                  <a class="button">Lights</a>
+                  <a class="button">Landing gear</a>
+                  <a class="button">Set target</a>
+                  <a class="button">Cargo scoop</a>
+                  <a class="button">Galaxy map</a>
+                  <a class="button">System map</a>
+                  <a class="button">Comm panel</a>
+                  <a class="button">System panel</a>
+               </div>
+
+            </div>
+
+         </div>
+         <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+      </div>
+
+      <script>
+         fullscreen = function(e){
+            if (e.webkitRequestFullScreen) {
+              e.webkitRequestFullScreen();
+           } else if(e.mozRequestFullScreen) {
+              e.mozRequestFullScreen();
+           }
+        }
+
+        document.getElementById('elitepanel').onclick = function(){
+          fullscreen(document.getElementById('elitepanel'));
+      }
+
+      </script>
+
+   </body>
+</html>
