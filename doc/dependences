@@ -1,0 +1,9 @@
+# Dependencias para python
+pip install pymongo
+pip install tornado
+
+# How to create MongoDB's Indexes for the app
+
+db.systems.createIndex({"name":1})
+db.stations.createIndex({"name":1, "system_id":1})
+
